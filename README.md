@@ -314,26 +314,3 @@ This project can help identify:
 * Add alerts for severe flood-risk conditions
 * Build a web dashboard using Streamlit or React
 
-## Skills Demonstrated
-
-* Data engineering
-* ETL pipeline development
-* API integration
-* Python scripting
-* PostgreSQL database design
-* SQL querying
-* Data cleaning and transformation
-* Power BI dashboarding
-* Risk scoring logic
-* End-to-end analytics workflow
-
-## Project Status
-
-Completed as a portfolio data engineering project.
-
-## Author
-
-**Claudia Dominguez**
-Computer Science Graduate
-AI / Software Engineering / Data Engineering
-
