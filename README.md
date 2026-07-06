@@ -1,84 +1,142 @@
-# Houston Flood Data Pipeline
+# 🌊 Houston Flood Data Pipeline
 
-## Overview
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql)
+![Power%20BI](https://img.shields.io/badge/Power%20BI-Dashboard-F2C811?logo=powerbi)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-150458?logo=pandas)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
-Houston Flood Data Pipeline is an end-to-end data engineering project that collects weather data, transforms it with Python, stores structured results in PostgreSQL, and supports a Power BI dashboard for identifying Houston areas with elevated flood risk.
+An end-to-end **Data Engineering** project that collects weather observations, transforms raw environmental data, stores structured datasets in **PostgreSQL**, and powers an interactive **Power BI dashboard** for monitoring flood risk across the Houston metropolitan area.
 
-The goal of this project is to demonstrate how real-time or historical weather data can be processed into actionable insights for flood-risk monitoring, emergency planning, and data-driven decision-making.
+The project demonstrates how modern ETL pipelines convert raw weather information into actionable insights for emergency planning, flood monitoring, and data-driven decision making.
 
-## Project Timeline
+---
 
-**06/20/2026 – 07/15/2026**
+## 📅 Project Timeline
 
-## Problem Statement
+**June 20, 2026 – July 15, 2026**
 
-Houston is highly vulnerable to flooding due to heavy rainfall, flat terrain, bayous, and rapid urban development. Raw weather data alone is difficult to interpret without transformation, storage, and visualization.
+---
 
-This project solves that problem by building a pipeline that collects weather data, cleans and transforms it, stores it in a relational database, and visualizes flood-risk indicators in Power BI.
+# 📖 Overview
 
-## Features
+Houston experiences some of the most frequent flooding events in the United States due to:
 
-* Pulls weather data from an external weather API
-* Cleans and transforms raw weather data using Python
-* Stores processed data in PostgreSQL
-* Calculates flood-risk indicators based on rainfall and weather conditions
-* Supports Power BI dashboards for visualization
-* Highlights Houston areas with elevated flood risk
-* Provides a repeatable ETL workflow for data updates
+* Heavy rainfall
+* Flat topography
+* Extensive bayou systems
+* Rapid urban development
+* Poor drainage during severe storms
 
-## Tech Stack
+Raw weather data alone provides limited value. This project transforms that information into meaningful flood-risk indicators through a complete ETL pipeline.
 
-* **Python** – Data extraction, transformation, and pipeline logic
-* **PostgreSQL** – Relational database storage
-* **Power BI** – Dashboard and flood-risk visualization
-* **Pandas** – Data cleaning and transformation
-* **Requests** – API data extraction
-* **SQLAlchemy / psycopg2** – PostgreSQL connection
-* **Weather API** – Weather and rainfall data source
+The pipeline continuously demonstrates the core responsibilities of a Data Engineer:
 
-## Project Architecture
+* Extracting external data
+* Cleaning and transforming datasets
+* Loading data into relational databases
+* Supporting business intelligence dashboards
+* Producing analytical insights
+
+---
+
+# 🎯 Objectives
+
+* Build a complete ETL pipeline using Python
+* Collect weather data from an external API
+* Clean and standardize environmental data
+* Store processed information in PostgreSQL
+* Calculate flood-risk scores
+* Visualize trends using Power BI
+* Enable scalable reporting for flood monitoring
+
+---
+
+# ✨ Features
+
+* 🌦️ Collects weather data from an external API
+* 🧹 Cleans and transforms raw datasets
+* 🗄️ Loads structured data into PostgreSQL
+* 🌧️ Calculates flood-risk scores
+* 📊 Generates Power BI dashboards
+* 📍 Identifies high-risk Houston locations
+* 🔄 Repeatable ETL workflow
+* 📈 Historical weather trend analysis
+
+---
+
+# 🛠 Tech Stack
+
+| Category              | Technologies          |
+| --------------------- | --------------------- |
+| Programming           | Python                |
+| Database              | PostgreSQL            |
+| Data Processing       | Pandas                |
+| API Integration       | Requests              |
+| ORM                   | SQLAlchemy / psycopg2 |
+| Business Intelligence | Power BI              |
+| Version Control       | Git & GitHub          |
+
+---
+
+# 🏗 System Architecture
 
 ```text
-Weather API
-   ↓
-Python ETL Pipeline
-   ↓
-Data Cleaning & Transformation
-   ↓
-PostgreSQL Database
-   ↓
-Power BI Dashboard
-   ↓
-Houston Flood Risk Insights
+                Weather API
+                     │
+                     ▼
+          Data Extraction (Python)
+                     │
+                     ▼
+        Cleaning & Data Transformation
+                     │
+                     ▼
+          PostgreSQL Data Warehouse
+                     │
+                     ▼
+          Power BI Dashboard
+                     │
+                     ▼
+        Houston Flood Risk Analytics
 ```
 
-## Data Pipeline Workflow
+---
 
-### 1. Extract
+# 🔄 ETL Workflow
 
-The pipeline retrieves weather data for Houston-area locations from a weather API. Data may include:
+## 1️⃣ Extract
+
+Weather observations are retrieved through an external weather API.
+
+Collected attributes include:
 
 * Temperature
 * Humidity
-* Wind speed
 * Rainfall
-* Precipitation probability
-* Weather conditions
-* Timestamp
-* Location or ZIP code
+* Wind Speed
+* Weather Conditions
+* Precipitation Probability
+* Geographic Location
+* Observation Timestamp
 
-### 2. Transform
+---
 
-Python is used to clean and prepare the data by:
+## 2️⃣ Transform
 
-* Removing missing or invalid values
-* Standardizing timestamps
-* Formatting location fields
+The transformation layer prepares raw weather data for analytics.
+
+Processing includes:
+
+* Removing invalid records
+* Handling missing values
+* Formatting timestamps
+* Standardizing location names
 * Converting data types
-* Calculating rainfall totals
-* Creating flood-risk categories
+* Aggregating rainfall
+* Computing flood-risk categories
 
-Example flood-risk labels:
+Example risk classifications:
 
 ```text
 Low Risk
@@ -87,11 +145,13 @@ High Risk
 Severe Risk
 ```
 
-### 3. Load
+---
 
-The transformed data is loaded into PostgreSQL tables for structured storage and querying.
+## 3️⃣ Load
 
-Example database tables:
+Clean datasets are loaded into PostgreSQL for long-term storage and analytical querying.
+
+Example tables:
 
 ```text
 locations
@@ -100,85 +160,147 @@ flood_risk_scores
 pipeline_logs
 ```
 
-### 4. Visualize
+---
 
-Power BI connects to PostgreSQL and displays:
+## 4️⃣ Visualize
 
-* Rainfall trends
-* Flood-risk scores
-* High-risk Houston areas
-* Weather condition summaries
-* Risk level by location
-* Time-based precipitation patterns
+Power BI connects directly to PostgreSQL to provide interactive dashboards including:
 
-## Example Database Schema
+* Rainfall Trends
+* Flood Risk by Area
+* Weather Summaries
+* High-Risk Locations
+* Risk Score Distribution
+* Time-Series Analysis
+
+---
+
+# 📊 Data Pipeline
+
+```text
+Weather API
+     │
+     ▼
+Extract Weather Data
+     │
+     ▼
+Transform & Clean Data
+     │
+     ▼
+Generate Flood Risk Scores
+     │
+     ▼
+Load into PostgreSQL
+     │
+     ▼
+Power BI Dashboard
+     │
+     ▼
+Flood Risk Insights
+```
+
+---
+
+# 🗃 Database Schema
 
 ```sql
-CREATE TABLE locations (
-    location_id SERIAL PRIMARY KEY,
-    location_name VARCHAR(100),
-    zip_code VARCHAR(10),
-    latitude DECIMAL,
-    longitude DECIMAL
-);
+locations
+-----------
+location_id
+location_name
+zip_code
+latitude
+longitude
 
-CREATE TABLE weather_observations (
-    observation_id SERIAL PRIMARY KEY,
-    location_id INT REFERENCES locations(location_id),
-    observation_time TIMESTAMP,
-    temperature DECIMAL,
-    humidity DECIMAL,
-    wind_speed DECIMAL,
-    rainfall DECIMAL,
-    precipitation_probability DECIMAL,
-    weather_condition VARCHAR(100)
-);
+weather_observations
+---------------------
+observation_id
+location_id
+temperature
+humidity
+rainfall
+wind_speed
+precipitation_probability
+weather_condition
+observation_time
 
-CREATE TABLE flood_risk_scores (
-    risk_id SERIAL PRIMARY KEY,
-    observation_id INT REFERENCES weather_observations(observation_id),
-    risk_score DECIMAL,
-    risk_level VARCHAR(50),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+flood_risk_scores
+------------------
+risk_id
+observation_id
+risk_score
+risk_level
+created_at
 ```
 
-## Flood Risk Logic
+---
 
-Flood risk is estimated using weather indicators such as rainfall amount, precipitation probability, and humidity.
+# 🌧 Flood Risk Model
 
-Example logic:
+Flood risk is estimated using environmental indicators such as:
+
+* Rainfall
+* Humidity
+* Precipitation Probability
+
+Current scoring logic:
 
 ```text
-Rainfall >= 3 inches → Severe Risk
-Rainfall >= 2 inches → High Risk
-Rainfall >= 1 inch  → Moderate Risk
-Rainfall < 1 inch   → Low Risk
+Rainfall ≥ 3.0 in   → Severe Risk
+
+Rainfall ≥ 2.0 in   → High Risk
+
+Rainfall ≥ 1.0 in   → Moderate Risk
+
+Rainfall < 1.0 in   → Low Risk
 ```
 
-This logic can be improved by adding bayou levels, drainage data, historical flood records, or geospatial information.
+The scoring model is intentionally modular and can later incorporate:
 
-## Power BI Dashboard
+* Bayou water levels
+* River gauges
+* Soil saturation
+* Historical flooding records
+* GIS mapping
+* NOAA storm alerts
 
-The Power BI dashboard includes:
+---
 
-* Flood risk by Houston area
-* Rainfall by location
-* Daily precipitation trends
-* Risk-level summary cards
-* High-risk location table
-* Weather condition breakdown
+# 📈 Dashboard Highlights
 
-The dashboard helps users quickly identify which Houston areas may need closer monitoring during heavy rainfall events.
+The Power BI dashboard provides:
 
-## Folder Structure
+* 📍 Flood Risk by Houston Area
+* 🌧 Rainfall Trends
+* 📅 Daily Weather Activity
+* 🚨 High-Risk Alerts
+* 📊 Risk Distribution
+* 🛰 Geographic Flood Monitoring
+
+Example KPIs include:
+
+* Average Rainfall
+* Highest Risk Score
+* Areas Under Severe Risk
+* Daily Rainfall Totals
+* Weather Condition Frequency
+
+---
+
+# 📂 Project Structure
 
 ```text
-Houston-Flood-Data-Pipeline/
+Houston-Flood-Data-Pipeline
+│
+├── config/
+│   └── database_config.py
 │
 ├── data/
 │   ├── raw/
 │   └── processed/
+│
+├── powerbi/
+│   └── houston_flood_dashboard.pbix
 │
 ├── scripts/
 │   ├── extract_weather.py
@@ -190,127 +312,151 @@ Houston-Flood-Data-Pipeline/
 │   ├── create_tables.sql
 │   └── sample_queries.sql
 │
-├── powerbi/
-│   └── houston_flood_dashboard.pbix
-│
-├── config/
-│   └── database_config.py
-│
 ├── requirements.txt
 ├── README.md
 └── .gitignore
 ```
 
-## Installation
+---
 
-Clone the repository:
+# 🚀 Getting Started
+
+## Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/Houston-Flood-Data-Pipeline.git
+git clone https://github.com/CV17-09/Houston-Flood-Data-Pipeline.git
+
 cd Houston-Flood-Data-Pipeline
 ```
 
-Create a virtual environment:
+---
+
+## Create a Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate the virtual environment:
+### Activate
+
+Mac/Linux
 
 ```bash
-# Mac/Linux
 source venv/bin/activate
+```
 
-# Windows
+Windows
+
+```bash
 venv\Scripts\activate
 ```
 
-Install dependencies:
+---
+
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Environment Variables
+---
 
-Create a `.env` file in the root directory:
+# ⚙ Environment Variables
+
+Create a `.env` file.
 
 ```env
-WEATHER_API_KEY=your_api_key_here
+WEATHER_API_KEY=your_api_key
+
 DB_HOST=localhost
+DB_PORT=5432
 DB_NAME=houston_flood_db
 DB_USER=postgres
 DB_PASSWORD=your_password
-DB_PORT=5432
 ```
 
-## Running the Pipeline
+---
 
-Run the full pipeline:
+# ▶ Running the Pipeline
+
+Run the complete ETL workflow:
 
 ```bash
 python scripts/run_pipeline.py
 ```
 
-Or run each step individually:
+Or execute each stage individually:
 
 ```bash
 python scripts/extract_weather.py
+
 python scripts/transform_weather.py
+
 python scripts/load_to_postgres.py
 ```
 
-## Sample SQL Queries
+---
 
-Find high-risk areas:
+# 🔍 Example SQL Queries
+
+## High-Risk Locations
 
 ```sql
-SELECT 
+SELECT
     l.location_name,
     l.zip_code,
     f.risk_score,
     f.risk_level,
-    w.rainfall,
-    w.observation_time
+    w.rainfall
 FROM flood_risk_scores f
-JOIN weather_observations w 
-    ON f.observation_id = w.observation_id
-JOIN locations l 
-    ON w.location_id = l.location_id
-WHERE f.risk_level IN ('High Risk', 'Severe Risk')
+JOIN weather_observations w
+ON f.observation_id = w.observation_id
+JOIN locations l
+ON w.location_id = l.location_id
+WHERE f.risk_level IN ('High Risk','Severe Risk')
 ORDER BY f.risk_score DESC;
 ```
 
-Average rainfall by location:
+---
+
+## Average Rainfall
 
 ```sql
-SELECT 
+SELECT
     l.location_name,
     AVG(w.rainfall) AS average_rainfall
 FROM weather_observations w
-JOIN locations l 
-    ON w.location_id = l.location_id
+JOIN locations l
+ON w.location_id = l.location_id
 GROUP BY l.location_name
 ORDER BY average_rainfall DESC;
 ```
 
-## Key Insights
+---
 
-This project can help identify:
+# 💡 Key Insights
 
-* Houston areas with repeated heavy rainfall
-* Locations with increasing flood-risk scores
-* Time periods with elevated precipitation
-* Patterns between weather conditions and flood risk
+This pipeline enables analysts to:
 
-## Future Improvements
+* Identify neighborhoods with repeated heavy rainfall
+* Detect locations experiencing increasing flood risk
+* Analyze precipitation trends over time
+* Support emergency response planning
+* Produce interactive reports for stakeholders
 
-* Add real-time automated scheduling
-* Include bayou and river water-level data
-* Add geospatial mapping with latitude and longitude
-* Integrate Harris County flood warning data
-* Deploy the pipeline to the cloud
-* Add alerts for severe flood-risk conditions
-* Build a web dashboard using Streamlit or React
+---
+
+# 🚀 Future Enhancements
+
+* Automate scheduled ETL jobs with Apache Airflow
+* Integrate NOAA weather feeds
+* Incorporate Harris County flood-warning systems
+* Add GIS mapping with GeoPandas
+* Deploy to Microsoft Azure or AWS
+* Implement real-time flood alerts
+* Build a Streamlit analytics application
+* Develop a React dashboard for public visualization
+
+
+
 
