@@ -11,11 +11,6 @@ An end-to-end **Data Engineering** project that collects weather observations, t
 
 The project demonstrates how modern ETL pipelines convert raw weather information into actionable insights for emergency planning, flood monitoring, and data-driven decision making.
 
----
-
-## 📅 Project Timeline
-
-**June 20, 2026 – July 15, 2026**
 
 ---
 
