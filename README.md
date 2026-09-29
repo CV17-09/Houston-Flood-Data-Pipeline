@@ -16,7 +16,7 @@ The project demonstrates how modern ETL pipelines convert raw weather informatio
 
 # 📖 Overview
 
-october 7 Houston experiences some of the most frequent flooding events in the United States due to:
+october 10 Houston experiences some of the most frequent flooding events in the United States due to:
 
 * Heavy rainfall
 * Flat topography
